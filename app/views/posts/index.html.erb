@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1 class="pb-3">Posts</h1>
+  <div id="posts" class="d-flex flex-wrap flex-column">
+    <div class="row w-100">
+    <% @posts.each do |post| %>
+    <div class="col-md-4 mb-5">
+      <%= render post %>
+      <p class="d-block flex-1 ps-2 mt-2">
+        <%= link_to "Show this post", post %>
+      </p>
+
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "New post", new_post_path %>
+
