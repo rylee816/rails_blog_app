@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!
@@ -18,8 +20,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /posts or /posts.json
   def create
@@ -54,23 +55,24 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    def increment_views
-      @post.update(views: @post.views + 1)
-    end
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+
+  def increment_views
+    @post.update(views: @post.views + 1)
+  end
 end
