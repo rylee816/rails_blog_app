@@ -2,7 +2,7 @@
 
 require 'faker'
 
-User.create(email: 'randyriley666@gmail.com', password: 'password')
+User.create(email: 'randyriley666@gmail.com', password: 'password', name: 'Woozle')
 
 30.times do
   Post.create(
