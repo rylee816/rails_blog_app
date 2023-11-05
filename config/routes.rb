@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+  get '/u/:id', to: 'users#profile', as: 'user'
   resources :posts
   get 'about', to: 'pages#about'
 

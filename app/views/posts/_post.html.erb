@@ -2,7 +2,7 @@
   <h5 class="card-header py-3">
     <%= post.title %>
   </h5>
-  <h6 style="color: grey"; class="p-2">posted by <%= post.user.name %></h6>
+  <h6 style="color: grey"; class="p-2">posted by <%= link_to post.user.name, user_path(post.user) %></h6>
   <div class="card-body">
   <h6><%= pluralize(post.views, 'view') %></h6>
     <%= post.body %>
