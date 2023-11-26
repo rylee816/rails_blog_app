@@ -1,5 +1,5 @@
 <div class="card p-3 mb-1" style="background: ghostwhite; color: charcoalgrey">
-    <%= comment.user.name %>
-    <%= local_time(comment.created_at) %>
+    <p class="fw-bold m-0"><%= comment.user.name %></p>
+    <span class="mb-2"><%= local_time(comment.created_at) %></span>
     <%= comment.body %>
 </div>
