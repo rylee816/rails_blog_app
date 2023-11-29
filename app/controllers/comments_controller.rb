@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       redirect_to post_path(@post)
 
     else
-      flash[:notice] = 'Comment creation failed. Please try again.'
+      flash[:alert] = 'Comment creation failed. Please try again.'
       redirect_to post_path(@post)
     end
   end
