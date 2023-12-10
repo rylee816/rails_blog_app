@@ -1,5 +1,10 @@
 <div class="card p-3 mb-1" style="background: ghostwhite; color: charcoalgrey">
     <p class="fw-bold m-0"><%= comment.user.name %></p>
-    <span class="mb-2 fw-light fst-italic"><%= local_time(comment.created_at) %></span>
+    <span class="mb-2 fw-light fst-italic">Posted <%= time_ago_in_words(comment.created_at) %> ago</span>
     <%= comment.body %>
+    <div class="align-self-end">
+        <% if comment.user == current_user %>
+            <%= button_to "Delete", [post, comment], method: :delete, class:'btn btn-danger' %>
+        <% end %>
+    </div>
 </div>
